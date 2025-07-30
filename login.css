@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient( #4E01BA, #6B02BA);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  background-color: white;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.illustration {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  color: #333;
+  font-size: 22px;
+}
+
+p {
+  color: #777;
+  font-size: 14px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+input:focus {
+  border-color: #6a4cfc;
+}
+
+.remember {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.forgot-password {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #6a4cfc;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #5741d9;
+}
+
+.or-container {
+  margin: 20px 0;
+}
+
+span {
+  font-size: 14px;
+  color: #777;
+}
+
+.google-btn button {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  color: #333;
+  font-size: 16px;
+}
+
+.google-btn button:hover {
+  background-color: #f5f5f5;
+}
+
+.signup-link {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.signup-link a {
+  color: #6a4cfc;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
