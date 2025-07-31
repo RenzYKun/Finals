@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient( #4E01BA, #6B02BA);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 0 20px;
+}
+
+.routine-title {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.sleep-button {
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid black;
+    border-radius: 25px;
+    padding: 8px 24px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sleep-button:hover {
+    background: rgba(0, 0, 0, 0.4);
+    transform: translateY(-1px);
+}
+
+.sleep-button:active {
+    transform: translateY(0);
+}
+
+.sleep-card {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 25px;
+    width: 100%;
+    max-width: 350px;
+    backdrop-filter: blur(10px);
+    color: white;
+}
+
+.days-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.day-box {
+    background: rgba(139, 69, 246, 0.8);
+    border-radius: 12px;
+    padding: 18px 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    flex: 1;
+    color: white;
+}
+
+.sleep-info {
+    text-align: center;
+}
+
+.sleep-status {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.sleep-time {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.wake-label {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.wake-time {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.weekly-tracker {
+            background: rgba(192, 132, 252, 0.7);
+            border: 3px solid black;
+            border-radius: 20px;
+            padding: 20px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .week-days {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-decoration: underline;
+            color: black;
+            font-size: 16px;
+        }
+
+        .day-cards {
+            display: flex;
+            gap: 8px;
+        }
+
+        .day-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px 8px;
+            flex: 1;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            min-height: 120px;
+            justify-content: center;
+        }
+
+        .emoji-icon, .check-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+
+.nav-bar {
+    background: linear-gradient( #4E01BA);
+    width: 100%;
+    max-width: 800px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 40px;
+}
+
+.nav-icon {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.nav-icon:hover {
+    transform: scale(1.1);
+}
+
+.home-icon {
+    fill: #E5E7EB;
+}
+
+.moon-icon {
+    stroke: #000;
+    stroke-width: 2;
+    fill: none;
+}
+
+.chart-icon {
+    stroke: #000;
+    stroke-width: 2;
+    fill: none;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Goals Tracker</title>
+    <link rel="stylesheet" href="./routine.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Set and Track Sleep Goals</h1>
+            <div class="days">
+                <button class="day-btn">Sun</button>
+                <button class="day-btn">Mon</button>
+                <button class="day-btn">Tue</button>
+                <button class="day-btn">Wed</button>
+                <button class="day-btn">Thu</button>
+                <button class="day-btn">Fri</button>
+                <button class="day-btn">Sat</button>
+            </div>
+        </header>
+
+        <section class="sleep-goals">
+            <div class="sleep-time">
+                <div>
+                    <label for="sleep-time">Going to Sleep</label>
+                    <input type="time" id="sleep-time">
+                </div>
+                <div>
+                    <label for="wake-time">Wakening</label>
+                    <input type="time" id="wake-time">
+                </div>
+            </div>
+            
+            <div class="sleep-goal">
+                <label for="sleep-goal">Sleep Goal</label>
+                <input type="time" id="sleep-goal">
+            </div>
+            
+            <div class="recommendation">
+                <p>*It's recommended to have 8-10 hours of sleep</p>
+            </div>
+            
+            <div class="reminder">
+                <label for="reminder">Remind me</label>
+                <label class="switch">
+                    <input type="checkbox" id="reminder">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <button class="save-btn">Save</button>
+        </section>
+
+        <footer>
+            <div class="navigation">
+                <a href="home.html" class="home">Home</a>
+                <a href="routine.html" class="routine">Routine</a>
+                <a href="tracking.html" class="tracking">Tracking</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+body{
+    background: linear-gradient(#4E01BA, #6B02BA);
+    height: 100%;
+    width: 100%;
+}
+.cicle1 .img {
+    display:flex;
+    position: relative;
+    flex-direction: column;
+    bottom: 20px;
+    left: 20px;
+    width: 50px;
+}
+.circle2 .img {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+}
