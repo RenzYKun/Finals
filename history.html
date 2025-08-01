@@ -3,15 +3,269 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./history.css">
+    <title>Routine History</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 25%, #A855F7 50%, #C084FC 75%, #D946EF 100%);
+            min-height: 100vh;
+            color: white;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Background decorative elements */
+        .bg-decoration {
+            position: absolute;
+            border: 3px solid rgba(236, 72, 153, 0.4);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .bg-decoration:nth-child(1) {
+            width: 120px;
+            height: 120px;
+            top: 150px;
+            right: 350px;
+        }
+
+        .bg-decoration:nth-child(2) {
+            width: 80px;
+            height: 80px;
+            top: 180px;
+            right: 50px;
+        }
+
+        .bg-decoration:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            top: 200px;
+            right: 150px;
+        }
+
+        .bg-decoration:nth-child(4) {
+            width: 100px;
+            height: 100px;
+            bottom: 400px;
+            right: 30px;
+        }
+
+        .bg-decoration:nth-child(5) {
+            width: 140px;
+            height: 140px;
+            bottom: 200px;
+            left: -20px;
+        }
+
+        .bg-decoration:nth-child(6) {
+            width: 90px;
+            height: 90px;
+            bottom: 100px;
+            right: 20px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-top: 20px;
+        }
+
+        .back-arrow {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            text-decoration: none;
+            color: #7C3AED;
+            font-size: 20px;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+
+        .back-arrow:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+        }
+
+        .page-title {
+            font-size: 32px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .routine-container {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 25px;
+            padding: 30px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .day-group {
+            margin-bottom: 40px;
+        }
+
+        .day-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .day-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .day-card {
+            background: rgba(139, 92, 246, 0.6);
+            border-radius: 15px;
+            padding: 15px 20px;
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+            min-width: 70px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .schedule-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .schedule-label {
+            font-size: 18px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .schedule-time {
+            font-size: 24px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+            margin: 25px 0;
+        }
+
+        /* Curved arrow decoration */
+        .curved-arrow {
+            position: absolute;
+            top: 120px;
+            left: 60px;
+            width: 100px;
+            height: 60px;
+            border: 3px solid rgba(236, 72, 153, 0.6);
+            border-right: none;
+            border-bottom: none;
+            border-radius: 50px 0 0 0;
+            transform: rotate(-45deg);
+            z-index: 0;
+        }
+    </style>
 </head>
 <body>
-    <div class="circle1">
-        <img src="./image/image2.png" alt="Circle Decoration">
-    </div>
-    <div class="cicle2">
-        <img src="./image/image3.png" alt="Circle Decoration">
+    <!-- Background decorative elements -->
+    <div class="bg-decoration"></div>
+    <div class="bg-decoration"></div>
+    <div class="bg-decoration"></div>
+    <div class="bg-decoration"></div>
+    <div class="bg-decoration"></div>
+    <div class="bg-decoration"></div>
+
+    <!-- Curved arrow decoration -->
+    <div class="curved-arrow"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <a href="home.html" class="back-arrow">←</a>
+            <h1 class="page-title">Routine History</h1>
+        </div>
+
+        <!-- Routine Content -->
+        <div class="routine-container">
+            <!-- First Group: Sun, Mon, Tue -->
+            <div class="day-group">
+                <div class="day-row">
+                    <div class="day-card">Sun</div>
+                    <div class="day-card">Mon</div>
+                    <div class="day-card">Tue</div>
+                </div>
+                
+                <div class="schedule-info">
+                    <span class="schedule-label">Going to Sleep</span>
+                    <span class="schedule-time">8:00 P.M</span>
+                </div>
+                
+                <div class="schedule-info">
+                    <span class="schedule-label">Wakening</span>
+                    <span class="schedule-time">6:00 A.M</span>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Second Group: Wed, Thu -->
+            <div class="day-group">
+                <div class="day-row">
+                    <div class="day-card">Wed</div>
+                    <div class="day-card">Thu</div>
+                </div>
+                
+                <div class="schedule-info">
+                    <span class="schedule-label">Going to Sleep</span>
+                    <span class="schedule-time">10:00 P.M</span>
+                </div>
+                
+                <div class="schedule-info">
+                    <span class="schedule-label">Wakening</span>
+                    <span class="schedule-time">8:00 A.M</span>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Third Group: Fri, Sat -->
+            <div class="day-group">
+                <div class="day-row">
+                    <div class="day-card">Fri</div>
+                    <div class="day-card">Sat</div>
+                </div>
+                
+                <div class="schedule-info">
+                    <span class="schedule-label">Going to Sleep</span>
+                    <span class="schedule-time">10:00 P.M</span>
+                </div>
+                
+                <div class="schedule-info">
+                    <span class="schedule-label">Wakening</span>
+                    <span class="schedule-time">8:00 A.M</span>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
