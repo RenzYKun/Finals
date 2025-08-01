@@ -6,12 +6,119 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient( #4E01BA, #6B02BA);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+    background: linear-gradient(#4E01BA, #6B02BA);
+    min-height: 100vh;
     width: 100%;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.background-elements {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;    
+    left: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.bg-shape {
+    position: absolute;
+    opacity: 0.3;
+}
+
+.triangle-left {
+    width: 0;
+    height: 0;
+    border-left: 150px solid rgba(139, 69, 246, 0.4);
+    border-top: 200px solid transparent;
+    border-bottom: 200px solid transparent;
+    top: 20%;
+    left: -50px;
+}
+
+.triangle-right {
+    width: 0;
+    height: 0;
+    border-right: 120px solid rgba(192, 132, 252, 0.4);
+    border-top: 150px solid transparent;
+    border-bottom: 150px solid transparent;
+    bottom: 15%;
+    right: -40px;
+}
+
+.circle {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    background: transparent;
+}
+
+.circle-1 {
+    width: 80px;
+    height: 80px;
+    top: 15%;
+    left: 15%;
+}
+
+.circle-2 {
+    width: 50px;
+    height: 50px;
+    top: 70%;
+    right: 25%;
+}
+
+.circle-3 {
+    width: 30px;
+    height: 30px;
+    bottom: 45%;
+    left: 20%;
+}
+
+.circle-4 {
+    width: 60px;
+    height: 60px;
+    bottom: 20%;
+    right: 15%;
+}
+
+.settings-icon {
+    position: absolute;
+    z-index: 999;
+    top: 30px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.illustration {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.header h1 {
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    text-decoration: underline;
+    text-underline-offset: 8px;
 }
 
 .header-container {
@@ -21,6 +128,7 @@ body {
     width: 100%;
     max-width: 400px;
     padding: 0 20px;
+    margin-bottom: 20px;
 }
 
 .routine-title {
@@ -58,6 +166,7 @@ body {
     max-width: 350px;
     backdrop-filter: blur(10px);
     color: white;
+    margin-bottom: 25px;
 }
 
 .days-row {
@@ -105,83 +214,117 @@ body {
 }
 
 .weekly-tracker {
-            background: rgba(192, 132, 252, 0.7);
-            border: 3px solid black;
-            border-radius: 20px;
-            padding: 20px;
-            width: 100%;
-            max-width: 600px;
-        }
+    background: #BF00B2;
+    border: 3px solid black;
+    border-radius: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 100px;
+}
 
-        .week-days {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-            font-weight: bold;
-            text-decoration: underline;
-            color: black;
-            font-size: 16px;
-        }
+.week-days {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+    color: black;
+    font-size: 16px;
+}
 
-        .day-cards {
-            display: flex;
-            gap: 8px;
-        }
+.day-cards {
+    display: flex;
+    gap: 8px;
+}
 
-        .day-card {
-            background: white;
-            border-radius: 15px;
-            padding: 20px 8px;
-            flex: 1;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            min-height: 120px;
-            justify-content: center;
-        }
+.day-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px 8px;
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    min-height: 120px;
+    justify-content: center;
+}
 
-        .emoji-icon, .check-icon {
-            width: 24px;
-            height: 24px;
-        }
-
+.emoji-icon, .check-icon {
+    width: 24px;
+    height: 24px;
+}
 
 .nav-bar {
-    background: linear-gradient( #4E01BA);
+    background: linear-gradient(#4E01BA);
     width: 100%;
-    max-width: 800px;
     height: 80px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     padding: 0 40px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.nav-item:hover {
+    transform: scale(1.5);
 }
 
 .nav-icon {
     width: 40px;
     height: 40px;
-    cursor: pointer;
-    transition: transform 0.2s ease;
+    margin-bottom: 5px;
 }
 
-.nav-icon:hover {
-    transform: scale(1.1);
+.nav-label {
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
 }
 
-.home-icon {
-    fill: #E5E7EB;
+.placeholder-img {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    font-size: 14px;
+    color: #666;
 }
 
-.moon-icon {
-    stroke: #000;
-    stroke-width: 2;
-    fill: none;
+@media (max-width: 480px) {
+    .main-container {
+    padding: 15px;
 }
 
-.chart-icon {
-    stroke: #000;
-    stroke-width: 2;
-    fill: none;
+.illustration {
+    width: 100px;
+    height: 100px;
+}
+
+.header h1 {
+    font-size: 28px;
+}
+
+.weekly-tracker {
+    max-width: 350px;
+}
+
+.day-card {
+    min-height: 100px;
+    padding: 15px 5px;
+}
 }
